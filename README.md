@@ -52,11 +52,19 @@ embeddings = model(
 
 ## Dependence Analysis and Preprocessing
 
+To convert a binary program to an input to CodeArt, we need to
+first use IDA Pro to disassemble the binary program and then
+perform a conservative dependence analysis to extract the program dependence.
+
+Please refer to `preprocess/README.md` for details.
+
 ## Datasets
 
-We release malware dataset in raw binary.
-
 The preprocessed datasets we use for training and evaluation are on HuggingFace Hub and you can refer to the configuration files to check them.
+
+> Due to safety concerns, we will not directly release the raw binaries of the malware dataset.
+> Instead, after publication, we will provide the raw binaries upon request to insterested researchers.
+> For now, we release the sha256 hashes of the samples in the malware dataset in `evaluation/malware-family-classification/id2family.jsonl`.
 
 ## Pretraining
 
@@ -68,7 +76,7 @@ The evaluation code of CodeArt is under the directory `evaluation/`.
 
 ### Binary Similarity Analysis
 
-Navigate to `evaluation/binary-similarity/`.
+Please refer to `evaluation/binary-similarity/README.md` for details.
 
 ### Malware Family Classification
 
